@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número de LeBron - Juego</title>
+    
+    <!-- Importar fuente de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <!-- Título del juego -->
+        <div class="header">
+            <div class="basketball-icon">🏀</div>
+            <h1>Número de LeBron</h1>
+            <p class="subtitle">¿Puedes adivinar el número en el que piensa el Rey?</p>
+        </div>
+        
+        <!-- Información: intentos y rango -->
+        <div class="info-section">
+            <div class="info-box">
+                <div class="info-icon">🎯</div>
+                <div class="info-content">
+                    <span class="info-label">Intentos</span>
+                    <div class="info-value">
+                        <span id="intentos-actuales" class="value">0</span>
+                        <span class="value-max">/ 10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-icon">📊</div>
+                <div class="info-content">
+                    <span class="info-label">Rango</span>
+                    <div class="info-value">
+                        <span class="value">1 - 100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Zona de juego -->
+        <div class="game-section">
+            
+            <!-- Input y botón -->
+            <div class="input-group">
+                <input 
+                    type="number" 
+                    id="numero-input" 
+                    placeholder="Escribe tu número..."
+                    min="1" 
+                    max="100"
+                    autofocus
+                >
+                <button id="btn-adivinar" class="btn-primary">
+                    <span>Adivinar</span>
+                    <span class="btn-icon">🏀</span>
+                </button>
+            </div>
+            
+            <!-- Mensajes (ganaste, perdiste, pistas) -->
+            <div id="mensaje" class="mensaje"></div>
+            
+            <!-- LeBron aparece cuando das pistas -->
+            <div id="lebron-container" class="lebron-container hidden">
+                <div class="lebron-speech-bubble">
+                    <span id="lebron-texto">¡Sigue intentando!</span>
+                </div>
+                <img src="imagenes/Lebron.png" alt="LeBron James" class="lebron-imagen">
+            </div>
+            
+            <!-- Botón reiniciar (aparece al terminar) -->
+            <button id="btn-reiniciar" class="btn-secondary hidden">
+                <span>🔄 Jugar de Nuevo</span>
+            </button>
+        </div>
+        
+        <!-- Lista de números intentados -->
+        <div class="historial-section">
+            <div class="historial-header">
+                <h3>📝 Tus Intentos</h3>
+            </div>
+            <div id="historial-lista" class="historial-lista">
+                <p class="historial-vacio">Aún no has hecho ningún intento</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/juego.js"></script>
+</body>
+</html>
